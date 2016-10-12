@@ -1,0 +1,9 @@
+<div class="navbar-container">
+<nav-bar (toggleSidebar)="toggleSidebar($event)"></nav-bar>
+</div>
+<div class="container-body">
+	<sidebar-cmp [isActive]="sidebar"></sidebar-cmp>
+	<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">	
+		<router-outlet></router-outlet>
+	</section>
+</div>

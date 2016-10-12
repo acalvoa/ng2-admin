@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
 import { ModulesModule } from './modules/modules.module';
+import { ServicesModule } from './services/services.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from './shared/shared.module';
 		HttpModule,
 		RouterModule.forRoot(routes),
 		ModulesModule,
-		SharedModule
+		SharedModule,
+		ServicesModule
 	],
 	declarations: [AppComponent],
 	providers: [{

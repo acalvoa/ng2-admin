@@ -20,7 +20,7 @@ export class UserService {
 		return headers;
 	}
 	login(username:string,password:string){
-		let body = `identifier=${username}&password=${password}`;
+		let body = `email=${username}&password=${password}`;
 		let header = this.createHeaders();
 		return this.http.post(Config.API+'/login/admin',body,{
 	      headers: header

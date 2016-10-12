@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { LoginModule } from './login/login.module';
 import { SignupModule } from './signup/signup.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
-    imports: [CommonModule,LoginModule,SignupModule,DashboardModule],
+    imports: [CommonModule,FormsModule,LoginModule,SignupModule,DashboardModule],
     declarations: [],
     exports: []
 })

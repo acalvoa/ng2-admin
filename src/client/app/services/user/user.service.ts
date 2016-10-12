@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Config } from '../../shared/index';
 import {Http, Response, Headers} from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
@@ -9,17 +9,17 @@ export class UserService {
 	status:boolean;
 	http:Http;
 	//construimos los metodos
-	constructor(http: Http){
+	constructor(http: Http) {
 		this.http = http;
 	}
-	restore(){}
-	save(){}
+	restore() {}
+	save() {}
 	createHeaders() {
-		var headers = new Headers()
-	    headers.append('Content-Type', 'application/x-www-form-urlencoded'); 
+		var headers = new Headers();
+	    headers.append('Content-Type', 'application/x-www-form-urlencoded');
 		return headers;
 	}
-	login(username:string,password:string){
+	login(username:string,password:string) {
 		let body = `email=${username}&password=${password}`;
 		let header = this.createHeaders();
 		return this.http.post(Config.API+'/login/admin',body,{
@@ -38,20 +38,18 @@ export class UserService {
 	  //   	}
 		});
 	}
-	logout(){
+	logout() {
 		this.status = false;
 		this.user = null;
 	}
-	isLogged(){
+	isLogged() {
 		return this.status;
 	}
-	getUser(){
-		if(this.status){
+	getUser() {
+		if(this.status) {
 			return this.user;
-		}
-		else{
+		} else {
 			return null;
 		}
-		
 	}
 }

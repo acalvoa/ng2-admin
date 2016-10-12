@@ -11,12 +11,12 @@ import { Component } from '@angular/core';
     styleUrls: ['dashboard.component.css']
 })
 
-export class DashboardComponent { 
+export class DashboardComponent {
 	public sidebar:boolean;
-	constructor(){
+	constructor() {
 		this.sidebar = true;
 	}
-	toggleSidebar(){
+	toggleSidebar() {
 		this.sidebar = !this.sidebar;
 	}
 }

@@ -13,22 +13,22 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 	private email:string;
-	private password:string; 
+	private password:string;
 	private user:UserService;
 	private router:Router;
 
-	constructor(user:UserService, router:Router){
+	constructor(user:UserService, router:Router) {
 		this.user = user;
 		this.router = router;
 	}
 
-	login(){
+	login() {
 		this.user.login(this.email,this.password)
 		.subscribe(
-		    data => { 
+		    data => {
 		    	this.router.navigateByUrl('/dashboard/home');
 		    },
 		    err => console.error(err)
-		)
+		);
 	}
 }

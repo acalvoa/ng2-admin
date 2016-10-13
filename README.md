@@ -9,8 +9,8 @@ Creado a partir del proyecto SB ADMIN, Pretende ser una base para la creación d
 ## Dependencias
 - nodejs
 - npm
-## Conección con backend
 
+## Conección con backend
 - Para utilizar los servicios de autentificación es necesario usar un backend RESTFULL para el uso de servicios
 
 ## deploy

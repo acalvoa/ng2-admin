@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Config } from '../../shared/index';
 import {Http, Response, Headers} from '@angular/http';
+import { Router } from '@angular/router';
+import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,10 +11,28 @@ export class UserService {
 	status:boolean;
 	http:Http;
 	//construimos los metodos
-	constructor(http: Http) {
+	constructor(http: Http, private router: Router) {
 		this.http = http;
+		this.status = false;
 	}
-	restore() {}
+	restore() {
+		let header = this.createHeaders();
+		return this.http.get(Config.API+'/users/me',{
+	      headers: header,
+	      withCredentials: true
+	    })
+		.map((res:Response) => {
+			let response = res.json();
+			if(response.RESPONSE == 200){
+				this.user = response.USER;
+				this.status = true;
+				return true;
+			}
+			this.router.navigate(['/login']);
+			return false;
+		});
+	}
+	//FOR JWT IMPLEMENTATION (FUTURE)
 	save() {}
 	createHeaders() {
 		var headers = new Headers();
@@ -23,27 +43,38 @@ export class UserService {
 		let body = `email=${username}&password=${password}`;
 		let header = this.createHeaders();
 		return this.http.post(Config.API+'/login/admin',body,{
-	      headers: header
+	      headers: header,
+	      withCredentials: true
 	    })
 		.map((res:Response) => {
-			console.log(res.json());
-			// let data = res.json(); 
-			// if(data.response == "200" && data.status == 1){
-	  //   		this.user = data.user;
-	  //   		this.status = true;
-	  //   		return true;
-	  //   	}
-	  //   	else{
-	  //   		return false;
-	  //   	}
+			let response = res.json();
+			if(response.RESPONSE == 200){
+				this.user = response.USER;
+				this.status = true;
+				return true;
+			}
+			return false;
 		});
 	}
 	logout() {
-		this.status = false;
-		this.user = null;
+		let header = this.createHeaders();
+		return this.http.get(Config.API+'/users/logout',{
+	      headers: header,
+	      withCredentials: true
+	    })
+		.map((res:Response) => {
+			let response = res.json();
+			if(response.RESPONSE == 200){
+				this.status = false;
+				this.user = null;
+				return true;
+			}
+			return false;
+		});
+		
 	}
 	isLogged() {
-		return this.status;
+		return this.restore();
 	}
 	getUser() {
 		if(this.status) {

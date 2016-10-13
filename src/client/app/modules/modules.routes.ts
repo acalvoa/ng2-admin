@@ -4,7 +4,7 @@ import { SignupRoutes } from './signup/index';
 import { DashboardRoutes } from './dashboard/index';
 
 export const ModulesRoutes: Route[] = [
+  	...DashboardRoutes,
   	...LoginRoutes,
-	...SignupRoutes,
-	...DashboardRoutes
+	...SignupRoutes	
 ];

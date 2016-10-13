@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { UserService, LoggedInGuard } from './index';
+import { UserService } from './index';
+import { GuardService } from './user/guard.service';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [HttpModule],
   declarations: [],
-  providers: [UserService, LoggedInGuard],
+  providers: [GuardService,UserService],
   exports:[]
 })
 
 export class ServicesModule {
-
 }

@@ -1,6 +1,6 @@
-import { Route } from '@angular/router';
-
+import { Route} from '@angular/router';
 import { HomeRoutes } from './examples/home/index';
+import { GuardService } from '../../services/index';
 // import { ChartRoutes } from './examples/charts/index';
 // import { BlankPageRoutes } from './blank-page/index';
 // import { TableRoutes } from './examples/tables/index';
@@ -13,7 +13,7 @@ import { DashboardComponent } from './index';
 
 export const DashboardRoutes: Route[] = [
   	{
-    	path: 'dashboard',
+    	path: '',
     	component: DashboardComponent,
     	children: [
 	    	...HomeRoutes,
@@ -24,6 +24,7 @@ export const DashboardRoutes: Route[] = [
       //       ...FormRoutes,
       //       ...GridRoutes,
       //       ...BSElementRoutes
-    	]
+    	],
+        canActivate: [GuardService]
   	}
 ];

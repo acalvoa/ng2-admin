@@ -26,7 +26,7 @@ export class LoginComponent {
 		this.user.login(this.email,this.password)
 		.subscribe(
 		    data => {
-		    	this.router.navigateByUrl('/dashboard/home');
+		    	this.router.navigateByUrl('/');
 		    },
 		    err => console.error(err)
 		);

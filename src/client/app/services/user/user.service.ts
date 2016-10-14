@@ -2,7 +2,6 @@ import { Injectable} from '@angular/core';
 import { Config } from '../../shared/index';
 import {Http, Response, Headers} from '@angular/http';
 import { Router } from '@angular/router';
-import { Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -17,13 +16,13 @@ export class UserService {
 	}
 	restore() {
 		let header = this.createHeaders();
-		return this.http.get(Config.API+'/users/me',{
+		return this.http.get(Config.API+'/users/me', {
 	      headers: header,
 	      withCredentials: true
 	    })
 		.map((res:Response) => {
 			let response = res.json();
-			if(response.RESPONSE == 200){
+			if(response.RESPONSE === 200) {
 				this.user = response.USER;
 				this.status = true;
 				return true;
@@ -32,8 +31,8 @@ export class UserService {
 			return false;
 		});
 	}
-	//FOR JWT IMPLEMENTATION (FUTURE)
-	save() {}
+	// FOR JWT IMPLEMENTATION (FUTURE)
+	// save() {}
 	createHeaders() {
 		var headers = new Headers();
 	    headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -48,7 +47,7 @@ export class UserService {
 	    })
 		.map((res:Response) => {
 			let response = res.json();
-			if(response.RESPONSE == 200){
+			if(response.RESPONSE === 200) {
 				this.user = response.USER;
 				this.status = true;
 				return true;
@@ -64,14 +63,13 @@ export class UserService {
 	    })
 		.map((res:Response) => {
 			let response = res.json();
-			if(response.RESPONSE == 200){
+			if(response.RESPONSE === 200) {
 				this.status = false;
 				this.user = null;
 				return true;
 			}
 			return false;
 		});
-		
 	}
 	isLogged() {
 		return this.restore();

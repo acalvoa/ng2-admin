@@ -1,6 +1,6 @@
 <nav class="sidebar fix-sidebar" [class.sidebarPushRight]="!isActive">
     <ul class="list-group">
-        <a routerLink="/dashboard/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i> Dashboard
         </a>
         <!-- <a [routerLink]="['chart']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -22,11 +22,14 @@
             <i class="fa fa-th-list"></i> &nbsp;Component
         </a> -->
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
+            <a class="list-group-item" (click)="addExpandClass('productos')">
                 <span><i class="fa fa-plus"></i> &nbsp; Productos</span>
             </a>
-            <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
+            <li class="hidemenu" [class.expand]="showMenu === 'productos'">
                 <ul class="submenu">
+                    <li>
+                        <a href><span>Categorias</span></a>
+                    </li>
                     <li>
                         <a href><span>Administrar</span></a>
                     </li>
@@ -36,11 +39,38 @@
                 </ul>
             </li>
         </div>
-        <a [routerLink]="['blankpage']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pedidos')">
+                <span><i class="fa fa-plus"></i> &nbsp; Pedidos</span>
+            </a>
+            <li class="hidemenu" [class.expand]="showMenu === 'pedidos'">
+                <ul class="submenu">
+                    <li>
+                        <a href><span>Ordenes</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('localizacion')">
+                <span><i class="fa fa-map" aria-hidden="true"></i> &nbsp; Localización</span>
+            </a>
+            <li class="hidemenu" [class.expand]="showMenu === 'localizacion'">
+                <ul class="submenu">
+                    <li>
+                        <a href><span>Regiones</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Ciudades</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Comunas</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <!-- <a [routerLink]="['blankpage']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i> &nbsp;BlankPage
-        </a>
-        <a class="list-group-item more-themes" href="http://www.strapui.com/" >
-            More Themes
-        </a>
+        </a> -->
     </ul>
 </nav>

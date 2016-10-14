@@ -6,5 +6,5 @@ import { DashboardRoutes } from './dashboard/index';
 export const ModulesRoutes: Route[] = [
   	...DashboardRoutes,
   	...LoginRoutes,
-	...SignupRoutes	
+	...SignupRoutes
 ];

@@ -8,7 +8,6 @@ import { UserService } from '../../services/index';
     templateUrl: 'navbar.component.html',
     styleUrls: ['navbar.component.css']
 })
-
 export class NavbarComponent {
 	@Output()
 	toggleSidebar:EventEmitter<any> = new EventEmitter();

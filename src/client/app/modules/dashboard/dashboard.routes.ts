@@ -10,6 +10,11 @@ import { GuardService } from '../../services/index';
 // import { BSElementRoutes } from './examples/bs-element/index';
 
 import { DashboardComponent } from './index';
+import { UsersRoutes } from './users/index';
+import { AreasRoutes } from './areas/index';
+import { LugaresRoutes } from './lugares/index';
+import { SedesRoutes } from './sedes/index';
+
 
 export const DashboardRoutes: Route[] = [
   	{
@@ -17,6 +22,10 @@ export const DashboardRoutes: Route[] = [
     	component: DashboardComponent,
     	children: [
 	    	...HomeRoutes,
+        ...UsersRoutes,
+        ...SedesRoutes,
+        ...AreasRoutes,
+        ...LugaresRoutes
 	    	// ...ChartRoutes,
 	    	// ...BSComponentRoutes,
       //       ...TableRoutes,
@@ -25,6 +34,6 @@ export const DashboardRoutes: Route[] = [
       //       ...GridRoutes,
       //       ...BSElementRoutes
     	],
-        canActivate: [GuardService]
+      canActivate: [GuardService]
   	}
 ];

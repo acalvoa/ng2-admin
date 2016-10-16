@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
-
 import { HomeModule } from './examples/home/home.module';
+import { DatatableModule } from '../../shared/index';
+
 // import { ChartModule } from './examples/charts/chart.module';
 // import { BlankPageModule } from './blank-page/blankPage.module';
 // import { TableModule } from './examples/tables/table.module';
@@ -17,6 +18,10 @@ import { DashboardComponent } from './dashboard.component';
 
 import {NavbarComponent} from '../../shared/index';
 import {SidebarComponent} from '../../shared/index';
+import {UsersModule} from './users/users.module';
+import {SedesModule} from './sedes/sedes.module';
+import {AreasModule} from './areas/areas.module';
+import {LugaresModule} from './lugares/lugares.module';
 
 
 @NgModule({
@@ -26,6 +31,11 @@ import {SidebarComponent} from '../../shared/index';
     	DropdownModule,
         ModalModule,
     	HomeModule,
+        UsersModule,
+        SedesModule,
+        AreasModule,
+        LugaresModule,
+        DatatableModule
      //    ChartModule,
      //    TableModule,
      //    FormModule,

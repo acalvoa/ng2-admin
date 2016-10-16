@@ -1,0 +1,41 @@
+.login-page{
+	height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+}
+.login_box{
+	background:#FFF;
+	border:1px solid #666;
+	border-radius: 5px;
+	padding: 20px;
+}
+.login-page .input-underline {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid #777;
+    color: #777;
+    border-radius: 0;
+}
+.form-group {
+    padding: 8px 0;
+    input::-webkit-input-placeholder {
+    color: #777 !important;
+    }
+     
+    input:-moz-placeholder { /* Firefox 18- */
+    color: #777 !important;  
+    }
+     
+    input::-moz-placeholder {  /* Firefox 19+ */
+    color: #777 !important;  
+    }
+     
+    input:-ms-input-placeholder {  
+    color: #777 !important;  
+    }
+}
+.login_box_input{
+	width:80%;
+	margin-left:10%;
+}

@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 
-import { ModalDirective } from 'ng2-bootstrap/components/modal/modal.component';
 
 @Component({
 	moduleId: module.id,
@@ -20,8 +19,6 @@ import { ModalDirective } from 'ng2-bootstrap/components/modal/modal.component';
 })
 
 export class BSComponentComponent {
-
-	@ViewChild('childModal') public childModal:ModalDirective;
 
 	// Button
 	public singleModel:string = '1';

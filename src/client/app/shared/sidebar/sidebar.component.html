@@ -1,7 +1,7 @@
 <nav class="sidebar fix-sidebar" [class.sidebarPushRight]="!isActive">
     <ul class="list-group">
-        <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-dashboard"></i> Dashboard
+        <a [routerLink]="['/dashboard']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Inicio
         </a>
         <!-- <a [routerLink]="['chart']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i> Charts
@@ -22,10 +22,28 @@
             <i class="fa fa-th-list"></i> &nbsp;Component
         </a> -->
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('productos')">
-                <span><i class="fa fa-plus"></i> &nbsp; Productos</span>
+            <a class="list-group-item" (click)="addExpandClass('unidad')">
+                <span><i class="fa fa-hand-rock-o" aria-hidden="true"></i> &nbsp; Unidad</span>
             </a>
-            <li class="hidemenu" [class.expand]="showMenu === 'productos'">
+            <li class="hidemenu" [class.expand]="showMenu === 'unidad'">
+                <ul class="submenu">
+                    <li>
+                        <a href><span>Mi unidad</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Administrar Unidades</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Tareas Unidades</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('gentecargo')">
+                <span><i class="fa fa-user-secret" aria-hidden="true"></i> &nbsp; Gente a cargo</span>
+            </a>
+            <li class="hidemenu" [class.expand]="showMenu === 'gentecargo'">
                 <ul class="submenu">
                     <li>
                         <a href><span>Categorias</span></a>
@@ -39,32 +57,63 @@
                 </ul>
             </li>
         </div>
+        <a [routerLink]="['/avances']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i> Avances
+        </a>
+
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pedidos')">
-                <span><i class="fa fa-plus"></i> &nbsp; Pedidos</span>
+            <a class="list-group-item" (click)="addExpandClass('tareas')">
+                <span><i class="fa fa-tasks" aria-hidden="true"></i> &nbsp; Tareas</span>
             </a>
-            <li class="hidemenu" [class.expand]="showMenu === 'pedidos'">
+            <li class="hidemenu" [class.expand]="showMenu === 'tareas'">
                 <ul class="submenu">
                     <li>
-                        <a href><span>Ordenes</span></a>
+                        <a href><span>Crear Tarea</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Programar Tarea</span></a>
+                    </li>
+                    <li>
+                        <a href><span>Seguir Tareas</span></a>
                     </li>
                 </ul>
             </li>
         </div>
         <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('localizacion')">
-                <span><i class="fa fa-map" aria-hidden="true"></i> &nbsp; Localización</span>
+            <a class="list-group-item" (click)="addExpandClass('area')">
+                <span><i class="fa fa-sitemap"></i> &nbsp; Area</span>
             </a>
-            <li class="hidemenu" [class.expand]="showMenu === 'localizacion'">
+            <li class="hidemenu" [class.expand]="showMenu === 'area'">
                 <ul class="submenu">
                     <li>
-                        <a href><span>Regiones</span></a>
+                        <a href><span>Mi Area</span></a>
                     </li>
                     <li>
-                        <a href><span>Ciudades</span></a>
+                        <a href><span>Administrar Subareas</span></a>
                     </li>
                     <li>
-                        <a href><span>Comunas</span></a>
+                        <a href><span>Supervisar Areas</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('superadmin')">
+                <span><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Super Admin</span>
+            </a>
+            <li class="hidemenu" [class.expand]="showMenu === 'superadmin'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/sedes']" [routerLinkActive]="['router-link-active']" href><span><i class="fa fa-university" aria-hidden="true"></i> &nbsp; Administrar Sedes</span></a>
+                    </li>
+                    <li>
+                        <a href [routerLink]="['/lugares']" [routerLinkActive]="['router-link-active']"><span><i class="fa fa-building" aria-hidden="true"></i> &nbsp; Administrar Lugares</span></a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/areas']" [routerLinkActive]="['router-link-active']" href><span><i class="fa fa-cubes" aria-hidden="true"></i> &nbsp; Administrar Areas</span></a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/users']" [routerLinkActive]="['router-link-active']" href><span><i class="fa fa-user-plus" aria-hidden="true"></i> &nbsp; Administrar Usuarios</span></a>
                     </li>
                 </ul>
             </li>

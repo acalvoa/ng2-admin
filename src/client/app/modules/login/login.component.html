@@ -1,10 +1,10 @@
 <div class="login-page">
 	<div class="row">
-		<div class="col-lg-4 col-lg-offset-4">
-        	<img src="assets/img/SB-admin.png" width="100px" class="user-avatar" />
+		<div class="col-lg-4 col-lg-offset-4 login_box">
+        	<img src="assets/img/SB-admin.png" width="80px" class="user-avatar" />
 			<h1><img src="/assets/img/logo.png" height="80px"/></h1>
 			<form role="form">
-				<div class="form-content">
+				<div class="form-content login_box_input">
 					<div class="form-group">
 						<input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="email" name="email" placeholder="Email">
 					</div>
@@ -13,7 +13,7 @@
 						<input type="password" [(ngModel)]="password" name="password" class="form-control input-underline input-lg" id="" placeholder="Password">
 					</div>
 				</div>
-				<a class="btn rounded-btn" (click)="login()"> Log in </a>	
+				<a class="btn rounded-btn " (click)="login()"> Ingresar </a>	
 			</form>
 		</div>	
 	</div>

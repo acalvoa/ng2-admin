@@ -3,5 +3,5 @@
  */
 export * from './navbar/index';
 export * from './sidebar/index';
-
+export * from './datatable/index';
 export * from './config/env.config';

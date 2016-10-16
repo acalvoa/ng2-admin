@@ -2,6 +2,7 @@ nav{
 	height: 60px;
 	width: 100%;
 	display: flex;
+	background: #283643 !important; 
 }
 .logo{
 	height: 40px;
@@ -12,7 +13,7 @@ nav{
 		display: flex;
 		order:1;
 		img{
-			height: 40px;
+			height: 45px;
 		}
 	}
 	.toggle-sidebar{
@@ -22,8 +23,8 @@ nav{
 	    top: 0px;
 	    left: 5px;
 	    color: #FFF;
-	    background: #222;
-	    font-size: 23px;
+	    background: #283643;
+	    font-size: 23px !important;
 	    z-index: 3;    
 	    font-weight: normal;
 	    text-align: center;
@@ -43,11 +44,18 @@ nav{
 	}
 }
 .user{
-	height: 40px;
+	height: 45px;
 	width: auto;
 	display: flex;
 	align-items: flex-end;
 	justify-content: flex-end;
 	flex: 1;
 	order:2;
+}
+.dropdown-menu{
+	li{
+		a{
+			cursor: pointer !important;  
+		}
+	}
 }

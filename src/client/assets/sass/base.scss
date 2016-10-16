@@ -1,3 +1,8 @@
+html{
+	position:relative;
+	height:100%;
+	width:100%;
+}
 body{
 	display:flex;
 	flex-direction:column;
@@ -5,4 +10,17 @@ body{
 	width:100%;
 	font-size:16px;
 	font-family: "Helvetica";	
+	sd-app{
+		height:100%;
+		width:100%;
+	}
+}
+.pagination-table-cmp{
+	nav{
+		ul{
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-bottom: 5px;
+		}
+	}
 }

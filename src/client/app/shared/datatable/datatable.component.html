@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th class="num"><b>#</b></th>
+			<th *ngFor="let header of column"><b>{{ header.name }}</b></th>
+			<th *ngIf="(column.length > 1) && (config.delete || config.edit)"><b>Acciones</b></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let values of data; let i = index;">
+			<td class="inforow">{{ (i+1) }}</td>
+			<td class="inforow" *ngFor="let header of column">{{ header.submatch ? (values[header.match]?values[header.match][header.submatch]:'No Disponible'): values[header.match] }}</td>
+			<td *ngIf="(config.delete || config.edit)" class="actions">
+				<button type="button" class="btn btn-info" *ngIf="config.edit" (click)="doEdit(values)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
+				<button type="button" class="btn btn-danger" *ngIf="config.delete" (click)="doDelete(values)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<ngb-pagination [collectionSize]="data.length" [pageSize]="15" class="pagination-table-cmp"></ngb-pagination>

@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Importclub - Bunker de operaciónes';
+  APP_TITLE = 'USS - Administrador de Tareas';
 
   /**
    * The base folder of the applications source files.
@@ -316,7 +316,8 @@ export class SeedConfig {
     packageConfigPaths: [
       `/node_modules/*/package.json`,
       `/node_modules/**/package.json`,
-      `/node_modules/@angular/*/package.json`
+      `/node_modules/@angular/*/package.json`,
+      `/node_modules/@ng-bootstrap/ng-bootstrap/package.json`
     ],
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,

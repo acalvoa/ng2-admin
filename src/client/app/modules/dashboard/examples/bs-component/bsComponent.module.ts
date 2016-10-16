@@ -3,18 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import {
-		AlertModule,
-		ButtonsModule,
-		DropdownModule,
-		PaginationModule,
-		ProgressbarModule,
-		RatingModule,
-		TabsModule,
-		TooltipModule,
-		ModalModule,
-		TypeaheadModule
-	} from 'ng2-bootstrap/ng2-bootstrap';
+
 
 
 import { BSComponentComponent } from './bsComponent.component';
@@ -23,17 +12,7 @@ import { BSComponentComponent } from './bsComponent.component';
     imports: [
     	RouterModule,
     	FormsModule,
-		CommonModule,
-		AlertModule,
-		ButtonsModule,
-		DropdownModule,
-		PaginationModule,
-		ProgressbarModule,
-		RatingModule,
-		TabsModule,
-		TooltipModule,
-		ModalModule,
-		TypeaheadModule
+		CommonModule
 	],
     declarations: [BSComponentComponent],
     exports: [BSComponentComponent]

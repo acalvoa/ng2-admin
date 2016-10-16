@@ -1,0 +1,27 @@
+.table-content, table{
+	width: 100%;
+}
+:host {
+	width:100%;
+}
+.row{
+	margin-left:0px;
+	margin-right:0px;
+}
+.table{
+	border-bottom:1px solid #DDD;
+	margin-bottom:0px;
+	.num{
+		width: 50px;
+	}
+	.inforow{
+		line-height: 1.5;
+	}
+}
+.actions{
+	width:250px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+.card-body{
+}

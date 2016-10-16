@@ -81,4 +81,22 @@ export class UserService {
 			return null;
 		}
 	}
+	isAdmin(){
+		if(this.user.ROLE.SUPERUSER) {
+			return this.user;
+		} else {
+			return null;
+		}
+	}
+	getUsers(){
+		let header = this.createHeaders();
+		return this.http.get(Config.API+'/users',{
+	      headers: header,
+	      withCredentials: true
+	    })
+		.map((res:Response) => {
+			let response = res.json();
+			return response;
+		});
+	}
 }
